@@ -1,0 +1,45 @@
+
+h2 {
+  color: #FFFF00;
+  text-align: center;
+  font-size: 6rem;
+  text-transform: uppercase;
+  margin-top: 20rem;
+  margin-bottom: 12rem;
+}
+
+
+/* 英文の大文字化 */
+.caps_all {
+  text-transform: uppercase;
+}
+
+.caps_first {
+  text-transform: capitalize;
+}
+
+
+/*======================== 
+SmartPhone Landscape
+　スマートフォン　横
+========================*/
+@media screen and (max-width:940px) and (orientation : landscape) {
+  h2 {
+    margin-top: 8rem;
+    margin-bottom: 18rem;
+  }
+
+}
+
+/*======================== 
+SmartPhone Portrait
+スマホ　縦 
+========================*/
+@media screen and (max-width:440px) and (orientation: portrait) {
+
+h2 {
+    font-size: 5rem;
+    margin: 20rem 0 15rem ;
+  }
+
+}
