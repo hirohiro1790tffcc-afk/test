@@ -1,0 +1,492 @@
+.grid {
+  width: 95%;
+  margin: 0 auto;
+  margin-top: 10rem;
+  margin-bottom: 20rem;
+  display: grid;
+  /* grid-template-rows: repeat(3); */
+  grid-template-columns: repeat(2, 40rem);
+  justify-content: center;
+  align-items: center;
+}
+
+.grid_box {
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  text-align: left;
+}
+
+.grid_item_01 {
+  grid-row: 1 / 2;
+  grid-column: 1 / 2;
+  margin: auto;
+  width: 16rem;
+}
+
+.grid_item_02 {
+  grid-row: 1/2;
+  grid-column: 2/3;
+}
+
+.grid_item_03 {
+  grid-row: 2/3;
+  grid-column: 1/3;
+}
+
+
+/* 
+Adjusting margins
+文章前後の余白調整 */
+.grid_box h3 {
+  color: #ffcc00;
+  font-size: 3rem;
+  margin: 3rem;
+}
+
+.grid_box p {
+  font-size: 1.6rem;
+  text-indent: 1.8rem;
+  line-height: 2.4rem;
+  margin-left: 5rem;
+}
+
+
+
+.grid_box ul {
+  margin-left: 5rem;
+}
+
+.grid_box ul li {
+  list-style: disc;
+  font-size: 1.6rem;
+  text-indent: 1.8rem;
+  line-height: 2.4rem;
+}
+
+.grid_item_02 p:nth-child(2) {
+  font-size: 2.5rem;
+}
+
+.grid_item_02 h3:first-child {
+  margin-top: 10rem;
+}
+
+.grid_item_03 h3 {
+  margin-top: 5rem;
+}
+
+.grid_item_03 p:first-child {
+  margin-left: 2rem;
+}
+
+/* 
+skill grid */
+.grid_item_04 {
+  grid-row: 3/4;
+  grid-column: 1/3;
+}
+
+.grid_item_04 h3 {
+  margin-top: 5rem;
+  margin-bottom: 0rem;
+}
+
+
+.skill_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 40%);
+  column-gap: 5rem;
+  row-gap: 5rem;
+  justify-content: center;
+  text-align: center;
+}
+
+.skill_grid dt {
+  margin: 3rem 0;
+  min-height: 20rem;
+  display: flex;
+  justify-content: center;
+}
+
+.skill_grid dd {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 6rem;
+}
+
+/* 
+HTML and CSS container*/
+.skill_grid dl:first-child dt img {
+  width: 40%;
+  margin: 0 2%;
+  filter: drop-shadow(0 0 3px #fff);
+  object-fit: contain;
+}
+
+  /*
+  Edit the button to "works page"
+  worksへ飛ぶボタンの編集*/
+  .to_works_page {
+    display: inline-block;
+    padding: 0 3.5rem;
+    margin-top: 3em;
+    height: 5rem;
+    line-height: 5rem;
+    border-radius: 5rem;
+    background-color: #fd27fd;
+    font-weight: 200;
+    color: #fff;
+    text-align: center;
+    font-size: 1.6rem;
+  }
+
+  .to_works_page:hover {
+    background-color: #bf26bf;
+  }
+
+  .to_works_page:active {
+    background-color: inherit;
+    color: #fd27fd;
+    font-weight: 500;
+    outline: 3px solid #fd27fd;
+  }
+
+/* 
+Word and Excel container*/
+.skill_grid dl:nth-child(2) dt img {
+  width: 40%;
+  margin: 0 3%;
+  filter: drop-shadow(0 0 3px #fff);
+  object-fit: contain;
+}
+
+.skill_grid dl:nth-child(2) dd h4 {
+  text-align: left;
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+}
+
+.skill_grid dl:nth-child(2) dd p {
+  text-align: left;
+  margin-left: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.skill_grid dl:nth-child(2) dd ul {
+  text-align: left;
+  margin-left: 2.5rem;
+}
+
+.skill_grid dl:nth-child(2) dd ul li {
+  text-align: left;
+  list-style-position: inside;
+}
+
+
+
+/* ===================
+Responsive 
+レスポンシブ
+===================== */
+/* 
+(orientation : landscape)
+
+Tablet
+タブレット横向き
+1400
+
+SmartPhone
+スマホ横向き
+940
+
+(orientation: portrait)
+
+Tablet
+タブレット縦向き
+1100
+
+SmartPhone
+スマホ縦向き
+440
+
+*/
+
+
+/*======================== 
+Tablet Landscape
+タブレット　横 
+========================*/
+
+@media screen and (max-width:1400px) and (orientation : landscape) {
+
+  .grid_item_02 p:nth-child(2) {
+    letter-spacing: 0.5rem;
+  }
+
+}
+
+
+/*======================== 
+SmartPhone Landscape
+　スマートフォン　横
+========================*/
+@media screen and (max-width:940px) and (orientation : landscape) {
+
+  /* 
+  In the following three cases, It didn't display well in grid so I changed it to block.
+  * SmartPhone Landscape
+  * Tablet Portrait
+  * SmartPhone Portrait
+
+  スマホ横・タブレット縦・スマホ縦の３つの場合、gridだとうまく表示されなかったためblockに変更 */
+  .grid {
+    display: block;
+    text-align: center;
+  }
+
+  main {
+    height: inherit;
+  }
+
+  /* 
+  Adjusting
+  ここから微調整 */
+  .grid {
+    width: 100%;
+    margin: 0;
+    margin-bottom: 8rem;
+  }
+
+  .grid_item_02,
+  .grid_item_03 {
+    margin: 0 auto;
+    width: 88%;
+  }
+
+  .grid_box {
+    text-align: center;
+  }
+
+  .grid_box h3 {
+    display: inline-block;
+    margin: 5rem 0 3rem;
+  }
+  
+  .grid_item_02 p:nth-child(2) {
+    text-align: center;
+    letter-spacing: 0.8rem;
+  }
+
+  .grid_item_03 h3:first-child {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid_box h4 {
+    text-align: left;
+    margin-left: 20%;
+  }
+
+  .grid p {
+    text-align: left;
+    margin: 0 20%;
+  }
+
+  .grid ul {
+    text-align: left;
+    margin: 0 auto 0 26%;
+  }
+
+  .grid_item_04 h3 {
+    margin-top: 7rem;
+    margin-bottom: 0rem;
+  }
+
+}
+
+/*======================== 
+Tablet Portrait
+タブレット　縦 
+========================*/
+@media screen and (max-width:1100px) and (orientation: portrait) {
+
+  /* 
+  In the following three cases, It didn't display well in grid so I changed it to block.
+  * SmartPhone Landscape
+  * Tablet Portrait
+  * SmartPhone Portrait
+
+  スマホ横・タブレット縦・スマホ縦の３つの場合、gridだとうまく表示されなかったためblockに変更 */
+  .grid {
+    display: block;
+    text-align: center;
+  }
+
+  main {
+    height: inherit;
+  }
+
+  /* 
+  Adjusting
+  ここから微調整 */
+  .grid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10rem;
+  }
+
+  .grid_box {
+    text-align: center;
+  }
+
+  .grid_box h3 {
+    display: inline-block;
+    margin-top: 7rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid_item_02 p:nth-child(2) {
+    text-align: center;
+    letter-spacing: 0.8rem;
+  }
+
+
+  .grid_item_03 h3:first-child {
+    margin-top: 5rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid_box h4 {
+    text-align: left;
+    margin-left: 20%;
+  }
+
+  .grid p {
+    text-align: left;
+    margin: 0 20%;
+  }
+
+  .grid ul {
+    text-align: left;
+    margin: 0 auto 0 20%;
+  }
+
+  .grid_item_04 h3 {
+    margin-top: 7rem;
+    margin-bottom: 0rem;
+  }
+}
+
+/*======================== 
+SmartPhone Portrait
+スマホ　縦 
+========================*/
+@media screen and (max-width:440px) and (orientation: portrait) {
+  .grid {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 13rem;
+  }
+
+  .grid_box {
+    text-align: center;
+  }
+
+  .grid_box h3 {
+    display: inline-block;
+    margin: 5rem 0;
+  }
+
+  .grid_item_03 h3:first-child {
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+  }
+
+  .grid_box h4 {
+    margin-left: 9%;
+  }
+
+  .grid p {
+    margin: 0 10%;
+  }
+
+  .grid ul {
+    margin: 0 auto 0 4%;
+    max-width: 40rem;
+  }
+
+  /* Adjust li bullet points　
+    「・」の位置を調整 */
+  .grid ul li {
+    list-style: none;
+  }
+
+  .grid ul li:before {
+    content: "・";
+    margin-right: 1.5rem;
+  }
+
+  /* 
+  Adjust skill grid */
+  .grid_item_04 h3 {
+    margin-top: 8rem;
+  }
+
+  .skill_grid {
+    display: block;
+  }
+
+  .skill_grid dt {
+    margin: 0;
+    max-height: 15rem;
+  }
+
+  .skill_grid dd {
+    margin-top: 4rem;
+  }
+
+  /* 
+  Adjust HTML and CSS container*/
+  .skill_grid dl:first-child dt img {
+    width: 35%;
+    margin: 0 5%;
+    filter: drop-shadow(0 0 3px #fff);
+    object-fit: contain;
+  }
+
+  .to_works_page {
+    margin-top: 4rem;
+    margin-bottom: 10rem;
+
+  }
+  
+  /* 
+  Adjust Word and Excel container*/
+  .skill_grid dl:nth-child(2) dt img {
+    width: 35%;
+    margin: 0 5%;
+  }
+
+  .skill_grid dl:nth-child(2) dd h4 {
+    margin-left: 4rem;
+  }
+
+  .skill_grid dl:nth-child(2) dd p {
+    margin-left: 5rem;
+  }
+
+  .skill_grid dl:nth-child(2) dd ul {
+    text-align: left;
+    margin-left: 5rem;
+  }
+
+  .skill_grid dl:nth-child(2) dd ul li {
+    text-align: left;
+    list-style-position: inside;
+  }
+
+}
