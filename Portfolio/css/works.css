@@ -1,0 +1,308 @@
+/* 
+Edit Grid items
+グリッドの編集 */
+.works_grid {
+  width: 70%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 10rem;
+  row-gap: 12rem;
+  margin: 15rem auto 20rem;
+}
+
+.works_grid li dl {
+  text-align: center;
+}
+
+.works_grid li dl dt {
+  text-align: center;
+}
+
+.works_grid li dl dt img {
+  text-align: center;
+  width: 80%;
+  height: 16rem;
+  object-fit: contain;
+  align-items: center;
+}
+
+.works_grid li dl dt img:hover {
+  transform: scale(1.05);
+  transition: 0.5s;
+}
+
+/* 
+Adjust the text part of "dl"
+dlのテキスト部分を調整*/
+.description_text_container {
+  width: 80%;
+  margin: 0 auto;
+  color: #fff;
+  font-size: 2rem;
+  line-height: 2.8rem;
+  text-align: center;
+}
+
+.description_text_container dt {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  margin: 2.5rem auto;
+}
+
+/* 
+Adjust the text of "dd"
+ddのテキスト部分を調整*/
+.description_text_container dd {
+  margin: 2.5rem 0;
+}
+
+.description_text_container dd:nth-child(2) {
+  text-align: left;
+}
+
+/* 
+Adjust the text part of "Definition"
+ddの中の要約・解説の部分だけを調整 */
+.definition_description_text {
+  min-height: 30rem;
+}
+
+  @media screen and (max-width:1815px) and (orientation : landscape) {
+    .definition_description_text {
+      min-height: 32rem;
+    }
+  }
+
+  @media screen and (max-width:1600px) and (orientation : landscape) {
+    .definition_description_text {
+      min-height: 40rem;
+    }
+  }
+
+  @media screen and (min-width:2110px) and (orientation : landscape) {
+    .definition_description_text {
+      min-height: 27rem;
+    }
+  }
+
+  @media screen and (min-width:2500px) and (orientation : landscape) {
+    .definition_description_text {
+      min-height: 23rem;
+    }
+  }
+
+.definition_description_text p {
+  margin: 0.8rem 0;
+}
+
+/* 
+Edit a Button in "dl"
+dlの中にあるボタンの編集 */
+.btn_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.to_practice_btn a {
+  display: inline-block;
+  padding: 1rem 5rem;
+  margin-top: 2rem;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+  color: #fff;
+  background-color: #fd27fd;
+  border-radius: 5rem;
+}
+
+.to_practice_btn a:hover {
+  background-color: #bf26bf;
+}
+
+.to_practice_btn a:active {
+  background-color: inherit;
+  color: #fd27fd;
+  font-weight: 500;
+  outline: 3px solid #fd27fd;
+}
+
+.description_text_container dd:nth-child(3),
+.to_practice_btn{
+  position: relative;
+  bottom: 0;
+}
+
+
+/* ===================
+Responsive 
+レスポンシブ
+===================== */
+/* 
+(orientation : landscape)
+
+Tablet
+タブレット横向き
+1400
+
+SmartPhone
+スマホ横向き スマートフォン
+940
+
+(orientation: portrait)
+
+Tablet
+タブレット縦向き
+1100
+
+SmartPhone
+スマホ縦向き スマートフォン
+440
+
+*/
+
+/*======================== 
+Tablet Landscape
+タブレット　横 
+========================*/
+
+@media screen and (max-width:1400px) and (orientation : landscape) {
+  .works_grid {
+    width: 70%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    row-gap: 20rem;
+    margin: 15rem auto 15rem;
+  }
+
+  .description_text_container {
+    margin: 0 auto;
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .description_text_container dt {
+    letter-spacing: 0.2rem;
+  }
+
+  .description_text_container dd {
+    margin: 2.5rem 0;
+  }
+
+}
+
+/*======================== 
+SmartPhone Landscape
+スマホ 横　スマートフォン
+========================*/
+@media screen and (max-width:940px) and (orientation : landscape) {
+  .works_grid {
+    width: 70%;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    column-gap: 10rem;
+    row-gap: 10rem;
+    margin: 10rem auto 8rem;
+  }
+
+  .works_grid li dl {
+    text-align: center;
+  }
+
+  .description_text_container {
+    font-size: 1.5rem;
+    line-height: 2.1rem;
+    text-align: center;
+    letter-spacing: 0rem;
+  }
+
+  .description_text_container dt {
+    height: auto;
+    margin: 2rem auto;
+  }
+
+  .definition_description_text {
+    height: auto;
+  }
+
+  .description_text_container dd {
+    margin: 1.2rem 0;
+  }
+
+  .definition_description_text p {
+    margin: 0.8rem 0;
+  }
+
+  .to_practice_btn a {
+    padding: 1rem 4rem;
+    margin: auto;
+    margin-top: 2.5rem;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    border-radius: 5rem;
+  }
+
+}
+
+/*======================== 
+Tablet Portrait
+タブレット　縦 
+========================*/
+@media screen and (max-width:1100px) and (orientation: portrait) {
+  .works_grid {
+    width: 85%;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+    margin: 15rem auto 10rem;
+  }
+
+  .definition_description_text {
+    min-height: 33rem;
+  }
+
+}
+
+/*======================== 
+SmartPhone Portrait
+スマホ　縦 スマートフォン
+========================*/
+@media screen and (max-width:440px) and (orientation: portrait) {
+  /* 
+  Continued adjust From grid items.
+  微調整の続き。gridの調整から */
+
+  .works_grid {
+    width: 90%;
+    grid-template-columns: repeat(1, 1fr);
+    row-gap: 15rem;
+    margin: 7.5rem auto 20rem;
+  }
+
+  .description_text_container {
+    letter-spacing: 0.1rem;
+  }
+
+  .description_text_container dd {
+    margin: 2.5rem 0;
+  }
+
+  .definition_description_text {
+    height: auto;
+  }
+
+  .btn_center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .to_practice_btn a {
+    margin: 0;
+    padding: 1rem 5rem;
+    font-size: 2rem;
+    letter-spacing: 0.2rem;
+  }
+
+}
