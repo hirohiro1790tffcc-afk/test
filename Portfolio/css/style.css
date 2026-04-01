@@ -1,0 +1,1680 @@
+/* font memo
+
+Title logo candidate
+タイトルロゴ候補
+  font-family: "Anton", sans-serif;
+  font-family: "Lato", sans-serif;
+  上を採用。(use the top)
+*/
+
+:root {
+  --header-height: 10rem;
+  --font-heading: 2.4rem;
+  --font-medium: 1.75rem;
+  --color-main_font: #FFFF00;
+  --color-background: #000;
+}
+
+html {
+  font-size: 10px;
+  /* 1rem = 10px */
+  scroll-behavior: smooth;
+  /* 画面右下の「topに戻るボタン」を押した際にスムーズにスクロールするようにする */
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-main_font);
+  /* English font for main text
+  本文の英文フォント */
+  font-family: "Sawarabi Gothic", sans-serif;
+  /* Japanese font for main text
+  本文の日本語フォント */
+  font-family: "BIZ UDPGothic", sans-serif;
+}
+
+/* 
+Header setting
+ヘッダー設定 
+ */
+
+header {
+  width: 100%;
+  height: var(--header-height);
+}
+
+.header_wrapper {
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 10rem;
+  height: var(--header-height);
+  background-color: var(--color-background);
+  position: fixed;
+  z-index: 10;
+  font-size: var(--font-heading);
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+
+/*
+Main banner in the top left
+ 左上の本バナー 
+*/
+
+.header_wrapper>a {
+  color: #f6fbc4;
+  text-decoration: none;
+  position: relative;
+}
+
+.logo_banner {
+  font-family: "Anton", sans-serif;
+  font-size: 3.5rem;
+  text-decoration: none;
+}
+
+.yellow_font {
+  -webkit-text-fill-color: var(--color-main_font);
+}
+
+#hamburger_check {
+  display: none;
+}
+
+.menu {
+  position: relative;
+}
+
+.main_nav {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.main_nav a,
+.main_nav a:hover,
+.main_nav a:visited {
+  list-style: none;
+  text-decoration: none;
+  color: inherit;
+  text-align: left;
+}
+
+.main_nav a {
+  display: block;
+  width: 18rem;
+  text-decoration: none;
+  text-transform: uppercase;
+  position: relative;
+}
+
+/*　
+Animation shooting star
+流れ星アニメーション 
+*/
+.main_nav a:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: -2rem;
+  width: 0%;
+  height: 0.1rem;
+  background-image: linear-gradient(to right, var(--color-main_font), var(--color-background));
+  padding-bottom: 0.2rem;
+  transition: 0s;
+}
+
+.main_nav a:hover:after {
+  width: 100%;
+  transition: 0.4s ease-out;
+  text-align: left;
+}
+
+.main_nav a:before {
+  content: "★";
+  color: var(--color-background);
+  margin-right: 0.7rem;
+  transition: 0s;
+}
+
+.main_nav a:hover:before {
+  color: var(--color-main_font);
+  transition: 1s;
+}
+
+/*　
+End of
+Animation shooting star
+終わり～～～流れ星アニメーション 
+*/
+
+/* 
+Background range settings
+背景の範囲設定
+ */
+#logo-section {
+  width: 100%;
+  height: calc(100vh - 10rem - 20vh);
+  position: relative;
+  display: block;
+}
+
+#about-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#works-section {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#contact-section {
+  width: 100%;
+  height: 60vh;
+  position: relative;
+}
+
+
+/* 
+logo title setting
+ロゴタイトルの設定*/
+.logo_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+}
+
+.logo_title {
+  display: block;
+  position: relative;
+  text-align: center;
+  justify-content: center;
+  font-size: 20rem;
+  font-family: "Anton", sans-serif;
+  color: #EDF684;
+  white-space: nowrap;
+}
+
+/* 
+logo animation 1st line
+ロゴアニメーション、1行目 */
+.logo_shooting_star_1 {
+  position: relative;
+}
+
+.logo_shooting_star_1::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 3px;
+  background-color: var(--color-main_font);
+  animation-name: logo_trajectory_1;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes logo_trajectory_1 {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+
+  49% {
+    width: 100%;
+    left: 0;
+  }
+
+  50% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  100% {
+    width: 0%;
+    left: auto;
+    right: 0;
+  }
+}
+
+.caps_animation_1 {
+  animation-name: turns_yellow_1;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes turns_yellow_1 {
+  90% {
+    color: #EDF684;
+  }
+
+  100% {
+    color: var(--color-main_font);
+  }
+}
+
+/* 
+logo animation 2nd line
+ロゴアニメーション、2行目 */
+.logo_shooting_star_2 {
+  position: relative;
+}
+
+.logo_shooting_star_2::before {
+  position: absolute;
+  content: "";
+  bottom: 0;
+  height: 3px;
+  background-color: var(--color-main_font);
+  animation-name: logo_trajectory_2;
+  animation-duration: 0.7s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes logo_trajectory_2 {
+  0% {
+    width: 0%;
+    left: 0;
+  }
+
+  49% {
+    width: 100%;
+    left: 0;
+  }
+
+  50% {
+    width: 100%;
+    left: auto;
+    right: 0;
+  }
+
+  100% {
+    width: 0%;
+    left: auto;
+    right: 0;
+  }
+}
+
+.caps_animation_2 {
+  animation-name: turns_yellow_2;
+  animation-duration: 1.0s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes turns_yellow_2 {
+  90% {
+    color: #EDF684;
+  }
+
+  100% {
+    color: var(--color-main_font);
+  }
+}
+
+/* 
+"Guide to scroll down"
+下へスクロールするように誘導 */
+.guide_text {
+  display: block;
+  margin: 2.5rem auto 1rem;
+  text-align: center;
+  font-size: 3.5rem;
+  color: #ffcc00;
+}
+
+/* 
+Font Awesome Material Icon
+"angles-down" 
+スクロール誘導の矢印アイコン*/
+.logo_wrap .fa-angles-down {
+  display: block;
+  font-size: 3.5rem;
+  text-align: center;
+  color: #ffcc00;
+}
+
+/* Change the arrow from transparent to lit and move it down.
+矢印を透明から点灯させつつ下へ移動 */
+@keyframes blinking_down {
+  0% {
+    opacity: 0.2;
+    transform: translateY(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(100%);
+  }
+}
+
+#blink_down {
+  animation-name: blinking_down;
+  animation-duration: 1.2s;
+  animation-iteration-count: infinite;
+  /* 繰り返し処理 */
+  animation-direction: normal;
+  /* 再生方向 */
+}
+
+/* 
+Add a gradient pink border.
+ピンクの境界線（右下）を入れる */
+.lower-right-gradient_pink_border {
+  clip-path: polygon(0 0,
+      100% calc(20% - 0.5rem),
+      100% 20%,
+      0 0.5rem);
+  width: 100%;
+  height: 100vh;
+  -ms-height: 5px;
+  background-image: -webkit-linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(240, 32, 228, 1) 19%, rgba(247, 35, 235, 1) 68%, rgba(143, 46, 121, 1) 97%);
+  background-color: #ee82ee;
+  position: absolute;
+  display: block;
+  z-index: 2;
+}
+
+/* 
+Add a short skyblue border.
+短い水色の交線を入れる */
+.lower-left-skyblue_border {
+  clip-path: polygon(0 calc(100% - 0.5rem),
+      calc(100% - 0.5rem) 0,
+      100% 0.5rem,
+      0.5rem 100%);
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 20vh;
+  -ms-height: 5px;
+  background-color: #68fdff;
+  position: absolute;
+  display: block;
+  z-index: 1;
+}
+
+/* 
+Add a gradient skyblue border.
+水色の境界線（左下）を入れる */
+.lower-left-gradient_skyblue_border {
+  clip-path: polygon(0 calc(20% - 0.5rem),
+      0 20%,
+      100% 0.5rem,
+      100% 0);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  -ms-height: 5px;
+  background-image: linear-gradient(0deg, rgba(255, 255, 255, 1), rgba(121, 240, 255, 1) 16% 78%, rgba(35, 102, 247, 1));
+  background-color: #68fdff;
+  position: absolute;
+  display: block;
+  z-index: 2;
+}
+
+/* 
+Add a short pink border.
+短いピンク色の交線を入れる */
+.lower-right-pink_border {
+  clip-path: polygon(0 0,
+      100% calc(100% - 0.5rem),
+      100% 100%,
+      0 0.5rem);
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 20vh;
+  -ms-height: 5px;
+  background-color: #F020E4;
+  position: absolute;
+  display: block;
+  z-index: 1;
+}
+
+/* 
+pink border setting for the contact section.
+contact用のピンク線*/
+#contact_section_border_height {
+  clip-path: polygon(0 0,
+      100% calc(33% - 0.5rem),
+      100% 33%,
+      0 0.5rem);
+  height: 60vh;
+}
+
+/*
+Summary and Access
+"About section"
+"Works sectino"
+項目の概要とリンク */
+.inner_wrap {
+  display: flex;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  width: 70%;
+  max-width: 150rem;
+  justify-content: space-around;
+}
+
+.animation_box {
+  /*
+  Fade in from the bottom using jQuery
+  jQueryを使って下からフェードイン  */
+  opacity: 0;
+  transition: 1s ease;
+}
+
+.summary_wrap {
+  max-width: 50%;
+}
+
+h2 {
+  text-align: center;
+  font-size: 6rem;
+  text-transform: uppercase;
+}
+
+.summary_wrap h2 {
+  margin-top: 2rem;
+  margin-bottom: 7rem;
+  letter-spacing: 0.18rem;
+}
+
+.summary_wrap h3 {
+  font-size: 3rem;
+  line-height: 5.5rem;
+  letter-spacing: 0.3rem;
+}
+
+.summary_wrap p {
+  font-size: 2.2rem;
+  line-height: 4rem;
+  letter-spacing: 0.8rem;
+  margin: 1rem 3rem 3rem;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+#works-section .summary_wrap p {
+  margin-left: 5rem;
+  margin-right: 0.8rem;
+  letter-spacing: 0.8rem;
+}
+
+.access_wrap {
+  margin: auto 0;
+  text-align: center;
+}
+
+/* 
+Font Awesome Material Icon
+"circle-down"  */
+/* 
+Down arrow in "access_wrap"
+「access_wrap」の中の下矢印 */
+.fa-circle-down {
+  display: inline-block;
+  font-size: 3.5rem;
+  margin-right: 1rem;
+  margin-bottom: 2.5rem;
+  animation-name: shaking_up_down;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  /* 繰り返し処理 */
+  animation-direction: alternate;
+  /* 再生方向 */
+}
+
+/* 
+Shake the arrow up and down
+矢印アイコンを上下に揺らす */
+@keyframes shaking_up_down {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-0.4rem);
+  }
+}
+
+.access_wrap span {
+  display: inline-block;
+  font-size: 3.5rem;
+  margin-bottom: 0rem;
+}
+
+.access_wrap img {
+  display: block;
+}
+
+/* 
+access img and text Decoration 
+概要リンク画像などの装飾*/
+#about-section .access_wrap img {
+  filter:
+    brightness(0) invert(1) drop-shadow(0.5rem 0.5rem 0rem #fff);
+}
+
+#about-section .access_wrap img:hover {
+  transition: 0.3s ease-in;
+  filter: brightness(0) invert(1) drop-shadow(2rem 2rem 2rem #fff) drop-shadow(-2rem -2rem 2rem #fff);
+}
+
+#works-section .access_wrap img:hover {
+  transition: 0.3s ease-in;
+  transform: scale(1.05);
+}
+
+/* Contact Section*/
+.contact_wrap {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 20%);
+  text-align: center;
+  font-size: 3rem;
+}
+
+.contact_wrap h2 {
+  margin-top: 0rem;
+  margin-bottom: 2rem;
+}
+
+.contact_wrap span,
+.contact_wrap i {
+  color: #dd9900;
+}
+
+/* 
+Use default icon inverted
+Font Awesomeのアイコンを上下反転して使用 */
+#upper_arrrow {
+  transform: scale(-1);
+  font-size: 2rem;
+  animation-name: shaking_up;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/* 
+Shake the arrow up and down
+矢印アイコンを上下に揺らす */
+@keyframes shaking_up {
+  0% {
+    transform: scale(-1) translate(0);
+  }
+
+  100% {
+    transform: scale(-1) translateY(0.3rem);
+  }
+}
+
+#contact-section h2:hover {
+  transition: 0.3s ease-in;
+  transform: scale(1.04);
+}
+
+/* Back to Top button
+画面右下のTOPボタン */
+.back_top_btn {
+  position: fixed;
+  right: 10rem;
+  bottom: 12rem;
+  text-align: center;
+  font-size: 3rem;
+  width: 10rem;
+  height: 10rem;
+  background: #000;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  z-index: 3;
+  padding-top: 0.5rem;
+}
+
+.back_top_btn i,
+.back_top_btn span {
+  line-height: 3rem;
+}
+
+/* ===================
+Responsive 
+レスポンシブ
+===================== */
+/* 
+(orientation : landscape)
+
+Tablet
+タブレット横向き
+1400
+
+SmartPhone
+スマホ横向き スマートフォン
+940
+
+(orientation: portrait)
+
+Tablet
+タブレット縦向き
+1100
+
+SmartPhone
+スマホ縦向き スマートフォン
+440
+
+*/
+
+/*======================== 
+Tablet Landscape
+タブレット　横 
+========================*/
+
+@media screen and (max-width:1400px) and (orientation : landscape) {
+
+  .header_wrapper {
+    background-color: transparent;
+    height: 10.6rem;
+    border: none;
+    padding: 0;
+  }
+
+  .logo_banner {
+    position: fixed;
+    margin-left: 0;
+    top: 2.8rem;
+    left: 7rem;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 30rem;
+    height: 31rem;
+  }
+
+  /* 
+  ----------------------------
+  Hamburger Menu
+  ----------------------------
+   */
+  .hamburger_btn {
+    display: flex;
+    position: fixed;
+    top: 2.8rem;
+    right: 2.8rem;
+    height: 5rem;
+    width: 5rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+  }
+
+  /* 
+  Create 3 lines
+  疑似要素含め、ボーダー３本作成 
+  */
+  .hamburger_btn .hamburger_center_bar,
+  .hamburger_btn .hamburger_center_bar:before,
+  .hamburger_btn .hamburger_center_bar:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 5rem;
+    background-color: #FFFF00;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .hamburger_btn .hamburger_center_bar:before {
+    bottom: 2rem;
+  }
+
+  .hamburger_btn .hamburger_center_bar::after {
+    top: 2rem;
+  }
+
+  /*
+  If check the hamburger, marked as [X].
+  チェックすると×になる 
+  */
+  #hamburger_check:checked~.hamburger_btn .hamburger_center_bar {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  #hamburger_check:checked~.hamburger_btn .hamburger_center_bar:before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #hamburger_check:checked~.hamburger_btn .hamburger_center_bar:after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /*
+  Menu Display on/off
+  メニューを見え隠れさせる 
+  */
+  .main_nav {
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+  }
+
+  #hamburger_check:checked~.main_nav {
+    transform: translateX(0);
+    transition: 0.5s ease-in-out;
+  }
+
+  #hamburger_check {
+    display: none;
+  }
+
+  /*
+  ----------------------------
+  End of 
+  Hamburger Menu
+  ----------------------------
+  */
+
+  .hamburger_btn .hamburger_center_bar,
+  .hamburger_btn .hamburger_center_bar:before,
+  .hamburger_btn .hamburger_center_bar:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 5rem;
+    background-color: #FFFF00;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  /* 
+  Adjust main_nav 
+  main_navの微調整 */
+  .main_nav {
+    display: block;
+    height: 40rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 10.6rem 0;
+    z-index: 9;
+  }
+
+  .main_nav li {
+    margin: 1.1rem 0;
+    margin-right: 0;
+    width: 32rem;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .main_nav li a {
+    display: inline;
+    line-height: 3.4rem;
+    position: relative;
+    border-bottom: 1px solid var(--color-main_font);
+  }
+
+  .main_nav li a:before {
+    content: "★";
+    color: var(--color-main_font);
+    margin-right: 1.9rem;
+  }
+
+  .main_nav li:first-child a {
+    padding: 2rem 8rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(2) a {
+    padding: 2rem 6.5rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(3) a {
+    padding: 2rem 8.5rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(4) a {
+    padding: 2rem 11.6rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(5) a {
+    padding: 2rem 10rem 1.2rem 1.2rem;
+  }
+
+  /*
+  Remove shooting star animation 
+  流れ星アニメーションを消す 
+  */
+  .main_nav a:before,
+  .main_nav a:after {
+    content: none;
+  }
+
+  .main_nav a,
+  .main_nav a:hover,
+  .main_nav a:visited {
+    text-align: right;
+  }
+
+  /*
+  End of
+  Remove shooting star animation
+  終わり--流れ星アニメーションを消す 
+  */
+
+  /* 
+  Adjust main Tab
+  mainタブ内の微調整 */
+  .logo_wrap {
+    top: calc(50% + 5rem);
+  }
+
+  .logo_title {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    font-size: 14.5rem;
+    font-family: "Anton", sans-serif;
+    color: #EDF684;
+  }
+
+  .inner_wrap {
+    top: 58%;
+  }
+
+  .summary_wrap h2 {
+    font-size: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .summary_wrap p {
+    font-size: 2.2rem;
+    line-height: 3rem;
+    letter-spacing: 0.8rem;
+    margin: 1rem 3rem 3rem;
+  }
+
+  .back_top_btn {
+    margin-right: 0rem;
+    right: 2.8rem;
+    bottom: 2.8rem;
+    font-size: 3rem;
+    width: 10rem;
+    height: 10rem;
+    padding-top: 0.5rem;
+  }
+
+}
+
+/*======================== 
+SmartPhone Landscape
+スマホ 横　スマートフォン
+========================*/
+@media screen and (max-width:940px) and (orientation : landscape) {
+
+  /* 
+  Adjust header
+  ヘッダーの微調整 */
+  .header_wrapper {
+    height: 7rem;
+  }
+
+  .logo_banner {
+    top: 1.7rem;
+    left: 4rem;
+    font-size: 1.6rem;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    width: 30rem;
+    height: 31rem;
+  }
+
+  .hamburger_btn {
+    top: 2.2rem;
+    right: 2.2rem;
+    height: 3.1rem;
+    width: 3.1rem;
+  }
+
+  .hamburger_btn .hamburger_center_bar,
+  .hamburger_btn .hamburger_center_bar:before,
+  .hamburger_btn .hamburger_center_bar:after {
+    height: 0.4rem;
+    transition: 0.5s;
+  }
+
+  .hamburger_btn .hamburger_center_bar:before {
+    bottom: 1.25rem;
+  }
+
+  .hamburger_btn .hamburger_center_bar::after {
+    top: 1.25rem;
+  }
+
+  /*　
+  Adjust a class "main_nav" 
+  クラス「main_nav」の微調整 */
+  .menu {
+    width: 20rem;
+    height: 31rem;
+    width: 0;
+    height: 0;
+  }
+
+  .main_nav {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20rem;
+    height: 35rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding-top: 7rem;
+    z-index: 9;
+  }
+
+  .main_nav li {
+    margin: 1.1rem 0;
+    width: 33rem;
+  }
+
+  .main_nav li a {
+    font-size: 1.7rem;
+    line-height: 1.7rem;
+  }
+
+  .main_nav li a:before {
+    margin-right: 1.2rem;
+  }
+
+  .main_nav li:first-child a {
+    padding: 1.6rem 15rem 1.1rem 0.6rem;
+  }
+
+  .main_nav li:nth-child(2) a {
+    padding: 1.6rem 13.8rem 1.1rem 0.6rem;
+  }
+
+  .main_nav li:nth-child(3) a {
+    padding: 2rem 15.2rem 1.1rem 0.6rem;
+  }
+
+  .main_nav li:nth-child(4) a {
+    padding: 2rem 17.25rem 1.1rem 0.6rem;
+  }
+
+  .main_nav li:nth-child(5) a {
+    padding: 2rem 16.1rem 1.1rem 0.6rem;
+  }
+
+  /* 
+  Adjust logo section
+  logo-sectio内の微調整 */
+  #logo-section {
+    height: calc(100vh - 7rem);
+  }
+
+  .logo_title {
+    display: block;
+    position: relative;
+    margin: 0 auto;
+    text-align: center;
+    justify-content: center;
+    font-size: 8rem;
+    font-family: "Anton", sans-serif;
+    color: #EDF684;
+  }
+
+  .logo_wrap {
+    top: calc(50% - 5rem);
+  }
+
+  .guide_text {
+    font-size: 2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* 
+  Font Awesome Material Icon
+  "angles-down" */
+  .logo_wrap .fa-angles-down {
+    display: block;
+    font-size: 2rem;
+    text-align: center;
+    color: #ffcc00;
+  }
+
+  @keyframes blinking_down {
+    0% {
+      opacity: 0.2;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(50%);
+    }
+  }
+
+  /* 
+  Adjust Summary and Access
+  項目の概要とリンクの微調整*/
+  .inner_wrap {
+    top: 55%;
+  }
+
+  .summary_wrap h2 {
+    font-size: 3rem;
+    margin: 2.5rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .summary_wrap h3 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+
+  .summary_wrap p {
+    font-size: 1.5rem;
+    line-height: 2.3rem;
+    letter-spacing: 0.3rem;
+    margin: 1.5rem 2.0rem 1.5rem;
+  }
+
+  #works-section .summary_wrap p {
+    margin-bottom: 2rem;
+  }
+
+  .fa-circle-down {
+    font-size: 2.5rem;
+    margin-bottom: 0rem;
+  }
+
+  .access_wrap span {
+    font-size: 2.5rem;
+    letter-spacing: 0.15rem;
+  }
+
+  .access_wrap img {
+    display: block;
+    transform: scale(0.75);
+  }
+
+  /* 
+  Adjust Contact section*/
+  .contact_wrap {
+    transform: translate(-50%, -20%);
+  }
+
+  .contact_wrap h2 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .contact_wrap span {
+    font-size: 2.4rem;
+  }
+
+  #upper_arrrow {
+    font-size: 2rem;
+  }
+
+  .back_top_btn {
+    right: 2rem;
+    bottom: 2rem;
+    font-size: 1.5rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    z-index: 3;
+    padding-top: 0.5rem;
+  }
+
+  /* 
+  Adjust back to button
+  右下のトップボタンの微調整*/
+  .back_top_btn i,
+  .back_top_btn span {
+    line-height: 0.8rem;
+  }
+
+}
+
+/*======================== 
+Tablet Portrait
+タブレット　縦 
+========================*/
+@media screen and (max-width:1100px) and (orientation: portrait) {
+
+  .header_wrapper {
+    height: 18rem;
+    border: none;
+    z-index: 10;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 0;
+  }
+
+  .header_wrapper>a {
+    color: #f6fbc4;
+    text-decoration: none;
+    position: relative;
+    top: 0;
+    left: 5rem;
+  }
+
+  .logo_banner {
+    position: fixed;
+    margin-left: 0;
+    top: 4rem;
+    left: 4.8rem;
+    font-size: 5rem;
+  }
+
+  .menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 26rem;
+    height: 28rem;
+    margin-right: 0rem;
+  }
+
+  /* 
+  ----------------------------
+  Hamburger Menu
+  ----------------------------
+   */
+  .hamburger_btn {
+    display: flex;
+    position: fixed;
+    top: 4rem;
+    right: 4.8rem;
+    height: 10rem;
+    width: 10rem;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+  }
+
+  /* Create 3 lines
+  疑似要素含め、ボーダー３本作成 */
+  .hamburger_btn .hamburger_center_bar,
+  .hamburger_btn .hamburger_center_bar:before,
+  .hamburger_btn .hamburger_center_bar:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1rem;
+    border-radius: 5rem;
+    background-color: #FFFF00;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  .hamburger_btn .hamburger_center_bar:before {
+    bottom: 3.3rem;
+  }
+
+  .hamburger_btn .hamburger_center_bar::after {
+    top: 3.3rem;
+  }
+
+  /*
+  If check the hamburger, marked as [X].
+  チェックすると×になる 
+  s*/
+  #hamburger_check:checked~.hamburger_btn .hamburger_center_bar {
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  #hamburger_check:checked~.hamburger_btn .hamburger_center_bar:before {
+    bottom: 0;
+    transform: rotate(45deg);
+  }
+
+  #hamburger_check:checked~.hamburger_btn .hamburger_center_bar:after {
+    top: 0;
+    transform: rotate(-45deg);
+  }
+
+  /*
+  Menu Display on/off
+   メニューを見え隠れさせる */
+  .main_nav {
+    transform: translateX(100%);
+    transition: 0.5s ease-in-out;
+    z-index: 9;
+  }
+
+  #hamburger_check:checked~.main_nav {
+    transform: translateX(0%);
+    transition: 0.5s ease-in-out;
+  }
+
+  #hamburger_check {
+    display: none;
+  }
+
+  /*
+  ----------------------------
+  End of 
+  Hamburger Menu
+  ----------------------------
+  */
+
+  .hamburger_btn .hamburger_center_bar,
+  .hamburger_btn .hamburger_center_bar:before,
+  .hamburger_btn .hamburger_center_bar:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.5rem;
+    border-radius: 5rem;
+    background-color: #FFFF00;
+    position: absolute;
+    transition: 0.5s;
+  }
+
+  /*　
+  Adjust main_nav main_nav 
+  main_navの微調整 */
+  .main_nav {
+    display: block;
+    height: 47rem;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 16rem 0;
+  }
+
+  .main_nav li {
+    margin: 1.1rem 0;
+    margin-right: 0;
+    margin-left: 3.5rem;
+    width: 26rem;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .main_nav li a {
+    display: inline;
+    line-height: 3.4rem;
+    position: relative;
+    border-bottom: 1px solid var(--color-main_font);
+  }
+
+  .main_nav li a:before {
+    content: "★";
+    color: var(--color-main_font);
+    margin-right: 1.9rem;
+  }
+
+  .main_nav li:first-child a {
+    padding: 2rem 8rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(2) a {
+    padding: 2rem 6.0rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(3) a {
+    padding: 2rem 7.5rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(4) a {
+    padding: 2rem 9.9rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(5) a {
+    padding: 2rem 9rem 1.2rem 1.2rem;
+  }
+
+  /* 
+  Remove shooting star animation 
+  流れ星アニメーションを消す 
+   */
+  .main_nav a:before,
+  .main_nav a:after {
+    content: none;
+  }
+
+  .main_nav a,
+  .main_nav a:hover,
+  .main_nav a:visited {
+    text-align: right;
+  }
+
+  /*　
+  End of
+  Remove shooting star animation 
+  終わり～流れ星アニメーションを消す
+   */
+
+  header {
+    height: 18rem;
+    width: 100%;
+  }
+
+  /* 
+  Adjust main Tab
+  mainタブ内の微調整 */
+
+  .logo_wrap {
+    display: block;
+  }
+
+  .logo_title {
+    font-size: 18rem;
+  }
+
+  .guide_text {
+    font-size: 4rem;
+  }
+
+  .logo_wrap .fa-angles-down {
+    font-size: 4rem;
+  }
+
+  .inner_wrap {
+    top: 55%;
+    width: 95%;
+  }
+
+}
+
+/*======================== 
+SmartPhone Portrait
+スマホ　縦 スマートフォン
+========================*/
+@media screen and (max-width:440px) and (orientation: portrait) {
+
+  /* 
+  Adjust header
+  ヘッダーの微調整 */
+  header {
+    height: 13rem;
+  }
+
+  .header_wrapper {
+    height: 13rem;
+  }
+
+  .logo_banner {
+    position: fixed;
+    margin-left: 0;
+    top: 4rem;
+    left: 12rem;
+    font-size: 2rem;
+    width: 19rem;
+    transform: scale(2, 1.7);
+  }
+
+  .hamburger_btn {
+    top: 3.5rem;
+    right: 2rem;
+    height: 6rem;
+    width: 7rem;
+  }
+
+  .hamburger_btn .hamburger_center_bar:before {
+    bottom: 3rem;
+  }
+
+  .hamburger_btn .hamburger_center_bar::after {
+    top: 3rem;
+  }
+
+  /*　
+  Adjust a class "main_nav" 
+  クラス「main_nav」の微調整 */
+  .menu {
+    margin-top: 13rem;
+    width: 0rem;
+    height: 0rem;
+  }
+
+  .main_nav {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 32rem;
+    padding: 2rem 0;
+  }
+
+  .main_nav li {
+    margin: 1.1rem 0;
+    margin-right: 0;
+    margin-left: 2rem;
+    width: 21.8rem;
+    display: inline-block;
+    text-align: right;
+  }
+
+  .main_nav li a {
+    display: inline;
+    right: 0;
+    line-height: 3.4rem;
+    position: relative;
+    border-bottom: 1px solid #FFFF00;
+  }
+
+  .main_nav li a:before {
+    content: "★";
+    color: var(--color-main_font);
+    margin-right: 1.9rem;
+  }
+
+  .main_nav li:first-child a {
+    padding: 2rem 4.2rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(2) a {
+    padding: 2rem 1.9rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(3) a {
+    padding: 2rem 3.2rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(4) a {
+    padding: 2rem 5.5rem 1.2rem 1.2rem;
+  }
+
+  .main_nav li:nth-child(5) a {
+    padding: 2rem 3.24rem 1.2rem 1.2rem;
+  }
+
+  /*
+  Adjust logo_title 
+  logo_titleの微調整   */
+
+  .logo_title {
+    font-size: 8rem;
+  }
+
+  .guide_text {
+    margin: 1.5rem auto 0.8rem;
+    font-size: 2.2rem;
+  }
+
+  .logo_wrap .fa-angles-down {
+    font-size: 1.9rem;
+  }
+
+  @keyframes blinking_down {
+    0% {
+      opacity: 0.2;
+      transform: translateY(0);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(70%);
+    }
+  }
+
+  #logo-section {
+    width: 100%;
+    height: calc(100vh - 13rem);
+    position: relative;
+    display: block;
+  }
+
+  /* 
+  Adjust Summary and Access
+  項目の概要とリンクの微調整*/
+  .inner_wrap {
+    max-width: 85%;
+    display: block;
+  }
+
+  .reverse {
+    flex-direction: row;
+  }
+
+  .summary_wrap {
+    max-width: none;
+  }
+
+  h2 {
+    font-size: 3rem;
+    text-transform: none;
+  }
+
+  .summary_wrap h2 {
+    margin-bottom: 3rem;
+  }
+
+  #about-section .summary_wrap h2 {
+    text-align: left;
+    margin-left: 5rem;
+  }
+
+  #works-section .summary_wrap h2 {
+    text-align: right;
+    margin-right: 5rem;
+  }
+
+  .summary_wrap h3 {
+    font-size: 2rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.2rem;
+  }
+
+  .summary_wrap p {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.3rem;
+    margin: 0.3rem 1rem 3.5rem;
+  }
+
+  #works-section .summary_wrap p {
+    font-size: 1.8rem;
+    line-height: 2.7rem;
+    letter-spacing: 0.3rem;
+    margin: 0.3rem 1rem 3.5rem;
+  }
+
+  .access_wrap {
+    max-width: 80%;
+    margin: 0 auto;
+  }
+
+  .fa-circle-down {
+    font-size: 2.5rem;
+    margin-right: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .access_wrap span {
+    font-size: 2.5rem;
+  }
+
+  .access_wrap img {
+    max-height: 18rem;
+    margin: 0 auto;
+  }
+
+  /* 
+  Adjust Contact section*/
+  #contact-section {
+    height: 50vh;
+  }
+
+  /* 
+  pink border setting for the contact section.
+  contact用のピンク線*/
+  #contact_section_border_height {
+    clip-path: polygon(0 0,
+        100% calc(40% - 0.5rem),
+        100% 40%,
+        0 0.5rem);
+    height: 50vh;
+  }
+
+  .contact_wrap {
+    transform: translate(-50%, -10%);
+    font-size: 2rem;
+  }
+
+  .contact_wrap h2 {
+    margin-bottom: 1rem;
+  }
+
+/* 小めじるし　shoumeji */
+  /* 
+  Adjust back to button
+  右下のトップボタンの微調整*/
+  .back_top_btn {
+    right: 3rem;
+    bottom: 3rem;
+    text-align: center;
+    font-size: 2rem;
+    width: 6.5rem;
+    height: 6.5rem;
+    background: #000;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    z-index: 3;
+    padding-top: 0.5rem;
+  }
+
+  .back_top_btn i,
+  .back_top_btn span {
+    line-height: 2rem;
+  }
+
+}
