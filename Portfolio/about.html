@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/about.css">
+  <!-- Favorite Icon -->
+  <link rel="icon alternate" href="image/logo_favicon.svg" type="image/svg">
+  <!-- Google Font -->
+  <!-- Title Font Candidate -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Main text Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Sawarabi+Gothic&display=swap"
+    rel="stylesheet">
+  <!-- Google Material Icon -->
+  <!-- about.htmlとabout.cssでのみ使用 -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=double_arrow" />
+  <!-- Font Awesome Material Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>ABOUT | Portfolio by Inada</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <!-- banner -->
+    <div class="header_wrapper">
+      <a href="index.html">
+        <h1 class="logo_banner">
+          <span class="caps_all">
+            <span class="yellow_font">
+              re:
+            </span>
+          </span>
+          <span class="caps_first">
+            <span class="yellow_font">s</span>tars
+          </span>
+          <br>
+          <span class="caps_first">
+            portfolio
+          </span>
+        </h1>
+      </a>
+      <!-- menu -->
+      <nav class="menu">
+        <!-- hamburger_menu -->
+        <input type="checkbox" id="hamburger_check">
+        <label class="hamburger_btn" for="hamburger_check">
+          <span class="hamburger_center_bar"></span>
+        </label>
+        <!-- list_menu -->
+        <ul class="main_nav">
+          <li><a href="index.html">top</a></li>
+          <li>
+            <a href="about.html">about</a>
+          </li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="study.html">study</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- main & grid -->
+  <main>
+    <h2>about</h2>
+    <div class="grid">
+      <img src="image/profile_img.jpg" alt="プロフィール画像" class="grid_item_01">
+      <section class="grid_box grid_item_02">
+        <h3>名前</h3>
+        <p>dark hero</p>
+        <h3>自己紹介</h3>
+        <p>
+          リスタル札幌に所属。教材を基にHTML・CSSを学び始める。最初は「覚えられるだろうか」という不安を抱えながらも、数をこなすうちに色んな手法を学ぶのが楽しくなり、一つの趣味になりつつある。
+        </p>
+        <p>いつかはJavaScriptやPHPにも挑戦したい。</p>
+        <h3>PC業務歴</h3>
+        <ul>
+          <li>CAD(Micro Stationで2D地図を描く)</li>
+          <li>ゲームのテスター</li>
+        </ul>
+      </section>
+      <section class="grid_box grid_item_03">
+        <h3>趣味</h3>
+        <p>ゲーム、ゲーム配信を観る、ギター、音楽鑑賞、ラジオ、Podcast、Audio Book、散歩やストレッチなどの運動、アニメや映画鑑賞、読書など。<br>
+          （最近は帰宅後もHTML・CSSに触る事が増えて嗜む機会が減っている。時間が欲しい）
+        </p>
+      </section>
+      <!-- Skill section -->
+      <section class="grid_box grid_item_04">
+        <h3>スキル</h3>
+        <div class="skill_grid">
+          <dl>
+            <dt>
+              <img src="image/html_icon.png" alt="HTMLアイコン">
+              <img src="image/css_icon.png" alt="CSSアイコン">
+            </dt>
+            <dd>修学期間：4か月</dd>
+            <a href="works.html" target="_blank" rel="noopener noreferrer" class="to_works_page">修学中に作った制作物</a>
+          </dl>
+          <dl>
+            <dt>
+              <img src="image/word_icon.png" alt="Wordアイコン">
+              <img src="image/excel_icon.png" alt="Excelアイコン">
+            </dt>
+            <dd>
+              <h4 class="caps_first">word:</h4>
+              <p>履歴書などの書類作成</p>
+              <h4 class="caps_first">excel:</h4>
+              <ul>
+                <li>関数を用いた出勤簿</li>
+                <li>ピボットテーブル</li>
+                <li>簡単なマクロ</li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+      </section>
+    </div>
+    <!-- Back to Top Button -->
+    <a href="#" class="caps_all">
+      <div class="back_top_btn">
+        <!-- Font Awesome Material Icon -->
+        <i class="fa-solid fa-angle-up"></i>
+        <span>top</span>
+      </div>
+    </a>
+  </main>
+</body>
+
+</html>
