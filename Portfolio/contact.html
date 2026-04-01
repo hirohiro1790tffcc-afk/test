@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <!-- Favorite Icon -->
+  <link rel="icon alternate" href="image/logo_favicon.svg" type="image/svg">
+  <!-- Google Font -->
+  <!-- Title Font Candidate -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Main text Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Sawarabi+Gothic&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome Material Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <title>CONTACT | Portfolio by Inada</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <!-- banner -->
+    <div class="header_wrapper">
+      <a href="index.html">
+        <h1 class="logo_banner">
+          <span class="caps_all">
+            <span class="yellow_font">
+              re:
+            </span>
+          </span>
+          <span class="caps_first">
+            <span class="yellow_font">s</span>tars
+          </span>
+          <br>
+          <span class="caps_first">
+            portfolio
+          </span>
+        </h1>
+      </a>
+      <!-- menu -->
+      <nav class="menu">
+        <!-- hamburger_menu -->
+        <input type="checkbox" id="hamburger_check">
+        <label class="hamburger_btn" for="hamburger_check">
+          <span class="hamburger_center_bar"></span>
+        </label>
+        <!-- list_menu -->
+        <ul class="main_nav">
+          <li><a href="index.html">top</a></li>
+          <li>
+            <a href="about.html">about</a>
+          </li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="study.html">study</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- main -->
+  <main>
+    <div class="contact">
+      <h2>contact</h2>
+      <form action="#">
+        <dl class="form_area">
+          <dt><span class="required">お名前</span></dt><!-- Add [必須] after -->
+          <dd><input class="input_text" type="text" name="name" required></dd>
+          <dt><span class="required">メールアドレス</span></dt><!-- Add [必須] after -->
+          <dd><input class="input_text" type="email" name="email" required></dd>
+          <dt><span>お電話番号</span></dt>
+          <dd><input class="input_text" type="tel" name="tel"></dd>
+          <dt class="inquiry"><span class="required">お問い合わせ内容</span></dt><!-- Add [必須] after -->
+          <dd><textarea class="text_message" name="message" required></textarea></dd>
+          <button class="submit_button" type="submit">
+            <span>submit</span>
+          </button>
+        </dl>
+      </form>
+    </div>
+    <!-- Back to Top Button -->
+    <a href="#" class="caps_all">
+      <div class="back_top_btn">
+        <!-- Font Awesome Material Icon -->
+        <i class="fa-solid fa-angle-up"></i>
+        <span>top</span>
+      </div>
+    </a>
+  </main>
+</body>
+
+</html>
