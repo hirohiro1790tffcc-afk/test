@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- Favorite Icon -->
+  <link rel="icon alternate" href="image/logo_favicon.svg" type="image/svg">
+  <!-- Google Font -->
+  <!-- Title Font Candidate -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Anton&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+    rel="stylesheet">
+  <!-- Main text Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&family=Sawarabi+Gothic&display=swap"
+    rel="stylesheet">
+  <!-- Font Awesome Material Icon -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <title>TOP | Portfolio by Inada</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header>
+    <!-- banner -->
+    <div class="header_wrapper">
+      <a href="index.html">
+        <h1 class="logo_banner">
+          <span class="caps_all">
+            <span class="yellow_font">
+              re:
+            </span>
+          </span>
+          <span class="caps_first">
+            <span class="yellow_font">s</span>tars
+          </span>
+          <br>
+          <span class="caps_first">
+            portfolio
+          </span>
+        </h1>
+      </a>
+      <!-- menu -->
+      <nav class="menu">
+        <!-- hamburger_menu -->
+        <input type="checkbox" id="hamburger_check">
+        <label class="hamburger_btn" for="hamburger_check">
+          <span class="hamburger_center_bar"></span>
+        </label>
+        <!-- list_menu -->
+        <ul class="main_nav">
+          <li><a href="index.html">top</a></li>
+          <li>
+            <a href="about.html">about</a>
+          </li>
+          <li><a href="works.html">works</a></li>
+          <li><a href="study.html">study</a></li>
+          <li><a href="contact.html">contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- main -->
+  <main>
+    <!-- Logo Section -->
+    <section id="logo-section">
+      <div class="logo_wrap">
+        <h1 class="logo_title">
+          <div class="logo_shooting_star_1">
+            <span class="caps_all">
+              <span class="caps_animation_1">
+                re:
+              </span>
+            </span>
+            <span class="caps_first ">
+              <span class="caps_animation_1">s</span>tars
+            </span>
+          </div>
+          <div class="logo_shooting_star_2">
+            <span class="caps_first">
+              <span class="caps_animation_2">p</span>ortfolio
+            </span>
+          </div>
+        </h1>
+        <span class="guide_text caps_first">scroll</span>
+        <!-- Font Awesome Material Icon -->
+        <i class="fa-solid fa-angles-down " id="blink_down"></i>
+      </div>
+      
+    </section>
+    <!-- About Section -->
+    <section id="about-section">
+      <span class="lower-right-gradient_pink_border"></span>
+      <span class="lower-left-skyblue_border"></span>
+      <!-- Summary Division  -->
+      <div class="inner_wrap animation_box">
+        <div class="summary_wrap">
+          <h2 class="caps_all">about</h2>
+          <h3>名前</h3>
+          <p class="caps_first">dark hero</p>
+          <h3 class="caps_first">profile</h3>
+          <p>
+            リスタル札幌に所属。
+            <br>
+            IT関連を中心に音楽や運動など、様々な趣味に取り組んでいる。<br>
+            今はWebデザインの勉強に熱が入っている。
+          </p>
+        </div>
+        <div class="access_wrap">
+          <a href="about.html">
+            <i class="fa-solid fa-circle-down"></i>
+            <span class="caps_first">more</span>
+            <img src="image/about_access_img.png" alt="aboutへ飛ぶ画像">
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Works Section -->
+    <section id="works-section">
+      <span class="lower-left-gradient_skyblue_border"></span>
+      <span class="lower-right-pink_border"></span>
+      <!-- Summary Division  -->
+      <div class="inner_wrap animation_box reverse">
+        <div class="summary_wrap">
+          <h2 class="caps_all">works</h2>
+          <p>
+            Web制作の業務を想定して、HTML/CSSを用いた複数のWebページを制作した。<br>
+            UIの分かりやすさや保守性を意識し、実務を想定してブラッシュアップを積み重ね、品質の向上に努めてきた。
+          </p>
+        </div>
+        <div class="access_wrap">
+          <a href="works.html">
+            <i class="fa-solid fa-circle-down"></i>
+            <span class="caps_first">more</span>
+            <img src="image/works_access_img.jpg" alt="worksへ誘導する画像リンク">
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Section -->
+    <section id="contact-section">
+      <span class="lower-right-gradient_pink_border" id="contact_section_border_height"></span>
+      <span class="lower-left-skyblue_border"></span>
+      <div class="contact_wrap">
+        <a href="contact.html">
+          <h2 class="caps_all">contact</h2>
+          <!-- Font Awesome Material Icon -->
+          <i class="fa-solid fa-angles-down " id="upper_arrrow"></i>
+          <span>here</span>
+          <i class="fa-solid fa-angles-down " id="upper_arrrow"></i>
+        </a>
+      </div>
+    </section>
+    <!-- Back to Top Button -->
+    <a href="#" class="caps_all">
+      <div class="back_top_btn">
+        <!-- Font Awesome Material Icon -->
+        <i class="fa-solid fa-angle-up"></i>
+        <span>top</span>
+      </div>
+    </a>
+  </main>
+</body>
+
+<!-- fade in jQuery -->
+<script>
+  $(function () {
+
+    $(window).on('load scroll', function () {
+      //現時点のスクロールの高さ取得
+      var scrollPosition = $(window).scrollTop();
+      //ウィンドウの高さ取得
+      var windowHeight = $(window).height();
+
+      $('.inner_wrap').each(function () {
+        //要素の位置（高さ）を取得
+        var elemPosition = $(this).offset().top;
+        //スクロールの高さが要素の位置を超えたら以下のスタイルを適用
+        if (elemPosition < scrollPosition + windowHeight) {
+          $(this).css({
+            opacity: 1,
+            transform: 'translate(-50% ,-50%)'
+          });
+        }
+      });
+    });
+
+  });
+</script>
+
+</html>
