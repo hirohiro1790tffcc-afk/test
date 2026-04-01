@@ -1,0 +1,760 @@
+:root {
+  --size-img_height:
+    30rem;
+  --size-img_padding_top:
+    5rem;
+  --size-dt_height:
+    12rem;
+  --size-dt_padding_top_and_bottom:
+    0rem;
+  --size-dd_height:
+    41rem;
+}
+
+.material_grid {
+  width: 1000px;
+  max-width: 90%;
+  margin-top: 10rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 7rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 300px);
+  column-gap: 5rem;
+  row-gap: 5rem;
+  justify-content: center;
+}
+
+main {
+  text-align: center;
+}
+
+h2 {
+  display: inline-block;
+  text-transform: uppercase;
+}
+
+.material_grid li {
+  text-align: center;
+  list-style: none;
+  min-height: 70rem;
+  border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.material_grid img {
+  height: var(--size-img_height);
+  max-height: 30rem;
+  max-width: 70%;
+  object-fit: contain;
+  margin-top: var(--size-img_padding_top);
+}
+
+.material_grid dt {
+  font-size: 1.8rem;
+  line-height: 2.8rem;
+  height: var(--size-dt_height);
+  width: 60%;
+  padding: var(--size-dt_padding_top_and_bottom) 10%;
+  display: table-cell;
+  /* テーブルセルにする */
+  text-align: center;
+  vertical-align: middle;
+}
+
+.material_grid dd {
+  font-size: var(--font-medium);
+  width: 80%;
+  margin: 0 9%;
+  height: var(--size-dd_height);
+  text-align: left;
+  line-height: 2.8rem;
+}
+
+.youtube_banner {
+  background-color: #ff0000;
+  height: 5rem;
+  max-width: 70%;
+  border-radius: .8rem;
+  padding: 0 1rem;
+  margin: 0 auto;
+  font-size: var(--font-medium);
+  color: #fff;
+  line-height: 4.8rem;
+}
+
+.gamazon_banner {
+  background-color: #ffff00;
+  height: 5rem;
+  max-width: 70%;
+  border-radius: .8rem;
+  padding: 0 2rem;
+  margin: 0 auto;
+  font-size: var(--font-medium);
+  color: #000;
+  letter-spacing: 0.15rem;
+  line-height: 4.8rem;
+}
+
+/*
+To make it responsive, surround it with "@media:hover".
+ここからhoverがあるため、@media (hover: hover)で囲む　レスポンシブ用  */
+@media (hover: hover) {
+
+  .material_grid .youtube_border:hover {
+    border: 1.5px solid #ff0000;
+    border-radius: 3px;
+    transform: scale(1.01);
+    transition: 0.4s;
+  }
+
+
+  .material_grid .gamazon_border:hover {
+    border: 1px solid #ffff00;
+    border-radius: 3px;
+    transform: scale(1.01);
+    transition: 0.4s;
+  }
+
+
+  /* 
+  Expand the range of img and banner so that a tags are valid in the margins when hovering over the grid.
+  JA:gridをhover時、marginにもaタグが有効になるよう、imgとbannerの範囲を広げる */
+  .wide-img_a_area {
+    width: 100%;
+    height: calc(var(--size-img_height) + var(--size-img_padding_top));
+  }
+
+  .wide-banner_a_area {
+    width: 100%;
+    padding: 5rem 0;
+    opacity: 0;
+  }
+
+  /*
+  Process to make banner float when hovering over "a" tag.
+  aタグhover時にbannerが浮かぶ処理 */
+  .wide-img_a_area:hover~.wide-banner_a_area,
+  .material_grid dl:hover+.wide-banner_a_area {
+    opacity: 1;
+    transition: 1s;
+  }
+
+  .wide-banner_a_area:hover {
+    opacity: 1;
+    transition: 1s;
+  }
+
+  /*
+  End of hover "a" tag.  
+  終わり～～～aタグhover時にbannerが浮かぶ処理 */
+
+  .material_grid a,
+  .material_grid a:hover,
+  .material_grid a:visited {
+    list-style: none;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  .gamazon_banner a:hover,
+  .gamazon_banner a:visited {
+    list-style: none;
+    text-decoration: none;
+    color: #000;
+  }
+
+} 
+
+/*
+ END of @media (hover: hover)
+ */
+
+  /* 
+  Speech bubble button that jumps to the "works page" near "STUDY"
+  見出し「STUDY」の近くにある、
+  「worksページ」へ移動する吹き出しボタン
+  */
+  .to_works_page_btn_1 {
+    position: absolute;
+    display: inline-block;
+    top: calc(10rem + 20rem - 2rem);
+    /* header + padding-top of h2 + adjust(微調整)
+  */
+    left: calc(50% + 22.8rem);
+  }
+
+  .balloon_1 {
+    font-size: 2.2rem;
+    background-color: #fd27fd;
+    border-radius: 15px;
+    color: #fff;
+    padding: 2rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .guide_tap {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #ffcc00;
+    /* 
+  Hide on PC (@Cでは非表示)*/
+    display: none;
+  }
+
+  #upper_arrrow {
+    font-size: 0.8rem;
+    color: #ffcc00;
+  }
+
+
+  /* 
+  Tail of a speech bubble
+  吹き出しのしっぽの部分*/
+  .balloon_1::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: -10rem;
+    margin-top: -0.2rem;
+    border: 1.0rem solid transparent;
+    border-right: 10rem solid #fd27fd;
+  }
+
+  .balloon_1:hover,
+  .balloon_1:active {
+    background-color: #bf26bf;
+  }
+
+  .balloon_1:hover:before,
+  .balloon_1:active:before {
+    border-right: 10rem solid #bf26bf;
+  }
+
+  /* 
+  Speech bubble button that jumps to the "works page" near the 5th grid.
+  5番目のgridの近くにある、
+  「worksページ」へ移動する吹き出しボタン
+  */
+  .material_grid li:nth-child(5) {
+    position: relative;
+    z-index: 1;
+  }
+
+  .to_works_page_btn_2 {
+    position: absolute;
+    display: inline-block;
+    right: -5rem;
+    bottom: calc(var(--size-img_height) + var(--size-img_padding_top) + var(--size-dt_height) + var(--size-dt_padding_top_and_bottom) + var(--size-dd_height) + 5rem + 5rem + 5rem - 10rem);
+    /* 
+    5rem * 3
+    = (Banner height
+    + padding top 
+    + padding bottom)
+      & Adjust(微調整)
+   */
+  }
+
+  .balloon_2 {
+    top: 6rem;
+    right: -6rem;
+    width: 14rem;
+    height: 14rem;
+    background-color: #fd27fd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .balloon_2>div {
+    display: block;
+  }
+
+  .balloon_2 p {
+    margin: 0 auto;
+    margin-top: 2rem;
+    font-size: 1.8rem;
+    line-height: 2.4rem;
+  }
+
+  /* 
+  Tail of a speech bubble
+  吹き出しのしっぽの部分*/
+  .balloon_2:before {
+    content: "";
+    position: absolute;
+    top: calc(2.5rem + 2rem + 2.7rem * 2 + 1.7rem + 1.6rem);
+    left: -2rem;
+    border: 1.0rem solid transparent;
+    border-left: 5rem solid #fd27fd;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+  .balloon_2:hover,
+  .balloon_2:active {
+    background-color: #bf26bf;
+  }
+
+  .balloon_2:hover:before,
+  .balloon_2:active:before {
+    border-left: 5rem solid #bf26bf;
+  }
+
+
+
+
+/* ===================
+Responsive 
+レスポンシブ
+===================== */
+/* 
+(orientation : landscape)
+
+Tablet
+タブレット横向き
+1400
+
+SmartPhone
+スマホ横向き
+940
+
+(orientation: portrait)
+
+Tablet
+タブレット縦向き
+1100
+
+SmartPhone
+スマホ縦向き
+440
+
+*/
+
+
+/*======================== 
+Tablet Landscape
+タブレット　横 
+========================*/
+@media screen and (max-width:1400px) and (orientation : landscape) {
+
+  .balloon_1::before {
+    margin-top: -1.1rem;
+  }
+  
+  /* 
+  Display "here" on mobile 
+  モバイルでは"here"を表示)*/
+  .guide_tap {
+    display: block;
+  }
+
+  /*
+  Always display banner
+  リンクバナーを常時表示 */
+  .wide-banner_a_area {
+    opacity: 1;
+  }
+
+  /* 
+  Always display Red and Yellow frames
+  gridの赤、黄の枠を常時表示 */
+  .material_grid .youtube_border {
+    border: 3px solid #ff0000;
+    border-radius: 0.8rem;
+  }
+
+  .material_grid .gamazon_border {
+    border: 3px solid #ffff00;
+    border-radius: 0.8rem;
+  }
+
+  /* 
+  @media (hover: hover)により、Hoverできない端末ではstyle.cssのrootフォントの色になっているので、白に指定しなおす
+  */
+  .material_grid a {
+    color: #fff;
+  }
+
+  /* 
+  When you tap it, it turns pale white.
+  タップしたら薄い白になる */
+  .material_grid a:active {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all .2s;
+  }
+
+  /* Adjust  微調整 */
+  :root {
+    --size-dd_height: 35rem;
+  }
+
+  .material_grid {
+    width: 1000px;
+    max-width: 80%;
+    margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, 35rem);
+    margin-bottom: 15rem;
+  }
+
+  .wide-banner_a_area {
+    padding: 2rem;
+  }
+
+  .youtube_banner {
+    max-width: 60%;
+    height: 6rem;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    line-height: 6rem;
+  }
+
+  .gamazon_banner {
+    max-width: 60%;
+    height: 6rem;
+    font-size: 1.4rem;
+    padding: 0 5rem;
+    line-height: 6rem;
+  } 
+
+}
+
+/*======================== 
+SmartPhone Landscape
+　スマートフォン　横
+========================*/
+@media screen and (max-width:940px) and (orientation : landscape) {
+  /* Adjust 微調整 */
+
+  :root {
+    --size-img_height:
+      22rem;
+    --size-img_padding_top:
+      5rem;
+    --size-dt_height:
+      12rem;
+    --size-dt_padding_top_and_bottom:
+      2.5rem;
+    --size-dd_height:
+      35rem;
+  }
+
+  .to_works_page_btn_1 {
+    position: absolute;
+    display: block;
+    top: calc(7rem + 20rem - 20rem);
+    /* header 
+     + padding top of h2(STUDY)
+       & Adjust(調整)
+    */
+    left: 65%;
+    width: 20rem;
+  }
+
+  .balloon_1 {
+    padding: 1.5rem;
+  }
+
+  .guide_tap {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #ffcc00;
+    /* 
+    Display "here" on mobile 
+    モバイルでは"here"を表示)*/
+    display: block;
+  }
+
+  .balloon_1::before {
+    top: 110%;
+    left: -20%;
+    -webkit-transform: rotate(330deg);
+    transform: rotate(330deg);
+  }
+
+  .material_grid li,
+  .material_grid li a {
+    height: auto;
+  }
+
+  .wide-banner_a_area {
+    padding: 3.5rem 0;
+  }
+
+  .material_grid {
+    margin-bottom: 8rem;
+  }
+
+
+
+}
+
+/*======================== 
+Tablet Portrait
+タブレット　縦 
+========================*/
+@media screen and (max-width:1100px) and (orientation: portrait) {
+
+  /*
+  Always display banner
+  リンクバナーを常時表示 */
+  .wide-banner_a_area {
+    opacity: 1;
+  }
+
+  /* 
+  Always display Red and Yellow frames
+  gridの赤、黄の枠を常時表示 */
+  .material_grid .youtube_border {
+    border: 3px solid #ff0000;
+    border-radius: 0.8rem;
+  }
+
+  .material_grid .gamazon_border {
+    border: 3px solid #ffff00;
+    border-radius: 0.8rem;
+  }
+
+  /* 
+  @media (hover: hover)により、Hoverできない端末ではstyle.cssのrootフォントの色になっているので、白に指定しなおす
+  */
+  .material_grid a {
+    color: #fff;
+  }
+
+  /* 
+  When you tap it, it turns pale white.
+  タップしたら薄い白になる */
+  .material_grid a:active {
+    display: block;
+    background-color: rgba(255, 255, 255, 0.2);
+    transition: all .2s;
+  }
+
+  /*
+  Align the heights of "li" and "a".
+   タップする範囲(li,a)のheightを統一する */
+  .material_grid li,
+  .material_grid li a {
+    height: auto;
+  }
+
+  /* Adjust 微調整 */
+  :root {
+    --size-img_height:
+      27rem;
+    --size-img_padding_top:
+      3.5rem;
+    --size-dt_height:
+      15rem;
+    --size-dt_padding_top_and_bottom:
+      3.5rem;
+    --size-dd_height:
+      43rem;
+  }
+
+  .wide-banner_a_area {
+    padding: 2rem;
+  }
+
+  .youtube_banner {
+    max-width: 80%;
+    height: 6rem;
+    font-size: 1.4rem;
+    padding: 0 1rem;
+    line-height: 6rem;
+  }
+
+  .gamazon_banner {
+    max-width: 80%;
+    height: 6rem;
+    font-size: 1.4rem;
+    padding: 0 5rem;
+    line-height: 6rem;
+  }
+
+  /* 
+  margin below grid
+  gridの下に余白 */
+  main {
+    height: auto;
+  }
+
+  .material_grid {
+    margin-bottom: 9rem;
+  }
+
+  .to_works_page_btn_1 {
+    position: absolute;
+    display: block;
+    top: calc(7rem + 20rem - 2rem);
+    /* 
+     header + padding top of h2(STUDY)
+     & Adjust(調整)
+    */
+    left: 65%;
+    width: 20rem;
+  }
+
+  .balloon_1 {
+    padding: 1.5rem;
+    padding-top: 2rem;
+  }
+
+  /* 
+  Display "here" on mobile 
+  モバイルでは"here"を表示)*/
+  .guide_tap {
+    display: block;
+  }
+
+  .balloon_1::before {
+    top: 105%;
+    left: -20%;
+    border: 1.0rem solid transparent;
+    border-right: 8rem solid #fd27fd;
+    -webkit-transform: rotate(330deg);
+    transform: rotate(330deg);
+  }
+
+  .balloon_1:hover:before,
+  .balloon_1:active:before {
+    border-right: 8rem solid #bf26bf;
+  }
+
+  .to_works_page_btn_2 {
+    right: -7rem;
+    bottom: calc(var(--size-img_height) + var(--size-img_padding_top) + var(--size-dt_height) + var(--size-dt_padding_top_and_bottom) + var(--size-dd_height) + 5rem + 5rem + 5rem - 13rem);
+    /* 
+    5rem * 3
+    = (Banner height
+    + padding top 
+    + padding bottom)
+      & Adjust(微調整)
+   */
+  }
+
+}
+
+/*======================== 
+SmartPhone Portrait
+スマホ　縦 
+========================*/
+@media screen and (max-width:440px) and (orientation: portrait) {
+  /* Adjust 微調整 */
+
+  :root {
+    --size-img_height:
+      22rem;
+    --size-img_padding_top:
+      5rem;
+    --size-dt_height:
+      12rem;
+    --size-dt_padding_top_and_bottom:
+      1.5rem;
+    --size-dd_height:
+      40rem;
+  }
+
+  .material_grid li,
+  .material_grid li a {
+    height: auto;
+  }
+
+  .wide-banner_a_area {
+    padding: 2.5rem 0;
+  }
+
+  main {
+    margin-bottom: 0;
+  }
+
+  .material_grid {
+    margin-bottom: 9rem;
+  }
+
+  .to_works_page_btn_1 {
+    position: absolute;
+    display: inline-block;
+    top: calc(13rem + 25rem - 20rem);
+    /* 
+    header + padding top of h2(STUDY)
+      & Adjust(調整)
+    */
+    left: calc(50% - 3rem);
+  }
+
+  .guide_tap {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    color: #ffcc00;
+    /* 
+    Display "here" on mobile 
+    モバイルでは"here"を表示)*/
+    display: block;
+  }
+
+  #upper_arrrow {
+    font-size: 0.8rem;
+    color: #ffcc00;
+  }
+
+  .balloon_1::before {
+    content: "";
+    position: absolute;
+    top: calc(50% + 6rem);
+    left: 2rem;
+    margin-top: -0.2rem;
+    border: 1.0rem solid transparent;
+    border-right: 5rem solid #fd27fd;
+    -webkit-transform: rotate(300deg);
+    transform: rotate(300deg);
+  }
+
+  .balloon_1:hover:before {
+    border-right: 5rem solid #bf26bf;
+  }
+
+  .to_works_page_btn_2 {
+    right: -3rem;
+    bottom: calc(var(--size-img_height) + var(--size-img_padding_top) + var(--size-dt_height) + var(--size-dt_padding_top_and_bottom) + var(--size-dd_height) + 5rem + 5rem + 5rem - 10rem);
+     /* 
+    5rem * 3
+    = (Banner height
+    + padding top 
+    + padding bottom)
+      & Adjust(微調整)
+    */
+  }
+
+  .balloon_2 {
+    top: 6rem;
+    right: -6rem;
+    width: 11rem;
+    height: 11rem;
+    background-color: #fd27fd;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .balloon_2 p {
+    font-size: 1.5rem;
+    line-height: 2.0rem;
+  }
+
+  .balloon_2:before {
+    content: "";
+    position: absolute;
+    top: calc(2.5rem + 2rem + 1.5rem * 2 + 1.7rem + 1.6rem);
+    left: -2rem;
+    border: 1.0rem solid transparent;
+    border-left: 5rem solid #fd27fd;
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+  }
+
+}
